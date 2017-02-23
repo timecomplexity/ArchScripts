@@ -8,4 +8,11 @@ Hopefully they will be of some use.
 
 ## Use As Commands
 You can add these to your /usr/local/bin folder to use them globally if you wish.
+
 `sudo mv /path/to/script /usr/local/bin/NameOfScript`
+
+You might have to change permissions on these to make them work properly. For example:
+
+`sudo chmod 755 NetworkReset`
+
+This will make it editable only with root permission and readable/executable by all users.
