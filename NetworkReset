@@ -1,7 +1,0 @@
-#!/bin/bash
-
-
-echo "Resetting network"
-wireless=$(ls /sys/class/net | grep wl)
-sudo ip link set $wireless down
-sudo wifi-menu

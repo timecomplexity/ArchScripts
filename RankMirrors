@@ -1,6 +1,0 @@
-#!/bin/bash
-
-echo "Ranking Mirrors for optimal speed."
-sudo mv /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.orig
-sudo rankmirrors -n 3 /etc/pacman.d/mirrorlist.orig > /etc/pacman.d/mirrorlist
-echo "Mirrors optimized."
