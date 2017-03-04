@@ -7,4 +7,12 @@
 echo "Resetting network"
 wireless=$(ls /sys/class/net | grep wl)
 sudo ip link set $wireless down
+sudo ip link set $wireless up
 sudo wifi-menu
+
+wget -q --tries=10 --timeout=20 --spider http://google.com
+if [[ $? -eq 0 ]]; then
+        echo "$wireless Successfully connected."
+else
+        echo "$wireless could not connect.\nTry re-running the script or 'ip link set $wireless' up"
+fi
