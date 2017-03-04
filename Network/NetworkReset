@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# This script is a quick fix for network connectivity issues
+# This relies on wifi-menu
+
 
 echo "Resetting network"
 wireless=$(ls /sys/class/net | grep wl)

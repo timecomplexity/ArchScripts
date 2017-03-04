@@ -1,0 +1,18 @@
+#!/bin/bash
+
+# Occaisionally on laptops the mouse will stop working
+# This should fix any mouse issues
+
+echo "Fixing mouse issues..."
+sudo modprobe -r psmouse
+sudo modprobe psmouse proto=imps
+
+read -p "Create options file and make changes permanent [y/n]? " input
+if [[	$input =~ ^[Yy]$	]]
+then
+	sudo touch /etc/modprobe.d/options
+	sudo bash -c 'echo "options psmouse proto=imps" > /etc/modprobe.d/options'
+	echo "options file updated"
+else
+	exit 1
+fi

@@ -1,6 +1,12 @@
 #!/bin/bash
 
+# By default, your repository mirrors are probably not ranked optimally
+# This script ranks mirrors in best order for your connection
+# If you run into issues, make sure that the mirrorlist was successfully renamed
+# If you need to recreate the mirrorlist you can generate them here
+# https://www.archlinux.org/mirrorlist/
+
 echo "Ranking Mirrors for optimal speed."
 sudo mv /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.orig
-sudo rankmirrors -n 3 /etc/pacman.d/mirrorlist.orig > /etc/pacman.d/mirrorlist
+sudo bash -c 'rankmirrors -n 3 /etc/pacman.d/mirrorlist.orig > /etc/pacman.d/mirrorlist'
 echo "Mirrors optimized."
